@@ -25,6 +25,12 @@
       "schema": "./src/schematics/component/schema.json",
       "description": "Create a component",
       "aliases": ["c"]
+    },
+    "vite-application": {
+      "factory": "./src/schematics/vite-application/schematic",
+      "schema": "./src/schematics/vite-application/schema.json",
+      "description": "vite application schematic",
+      "aliases": ["vite-app"]
     }
   }
 }

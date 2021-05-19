@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "Build executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "viteConfig": {
+      "type": "string",
+      "description": "Path to the project's vite config relative to the workspace root."
+    }
+  },
+  "required": ["viteConfig"]
+}

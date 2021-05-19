@@ -41,7 +41,9 @@
     "nuxt-e2e": {
       "tags": [],
       "implicitDependencies": ["nuxt"]
-    }
+    },
+    "vite": { "tags": [] },
+    "vite-e2e": { "tags": [], "implicitDependencies": ["vite"] }
   },
   "affected": {
     "defaultBase": "master"

@@ -15,6 +15,16 @@
       "implementation": "./src/builders/library/builder",
       "schema": "./src/builders/library/schema.json",
       "description": "library builder"
+    },
+    "vite-browser": {
+      "implementation": "./src/builders/vite-browser/executor",
+      "schema": "./src/builders/vite-browser/schema.json",
+      "description": "vite browser builder"
+    },
+    "vite-dev-server": {
+      "implementation": "./src/builders/vite-dev-server/executor",
+      "schema": "./src/builders/vite-dev-server/schema.json",
+      "description": "vite dev-server builder"
     }
   }
 }

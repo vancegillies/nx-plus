@@ -12,6 +12,8 @@ import { SchematicContext } from '@angular-devkit/schematics';
 import * as path from 'path';
 import * as semver from 'semver';
 import { appRootPath } from './app-root';
+import { ViteBrowserExecutorSchema } from './builders/vite-browser/schema';
+import { ViteDevServerExecutorSchema } from './builders/vite-dev-server/schema';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { chalk } = require('@vue/cli-shared-utils');
@@ -159,4 +161,19 @@ export function getBabelConfig(projectRoot: string) {
   const host = new virtualFs.SyncDelegateHost(new NodeJsSyncHost());
 
   return host.exists(babelConfig) ? getSystemPath(babelConfig) : undefined;
+}
+
+export function cleanViteOptions(
+  options: ViteDevServerExecutorSchema | ViteBrowserExecutorSchema
+) {
+  const ret = { ...options };
+  delete ret.debug;
+  delete ret.filter;
+  delete ret.config;
+  delete ret.root;
+  delete ret.base;
+  delete ret.mode;
+  delete ret.logLevel;
+  delete ret.clearScreen;
+  return ret;
 }

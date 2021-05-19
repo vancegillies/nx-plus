@@ -13,6 +13,7 @@ console.log('\nCreating playground. This may take a few minutes.');
 
 const workspaceJson = readWorkspaceJson();
 const publishableLibNames = getPublishableLibNames(workspaceJson);
+console.log({publishableLibNames})
 
 execSync(`yarn nx run-many --target build --projects ${publishableLibNames}`);
 
@@ -21,7 +22,7 @@ ensureDirSync(tmpProjPath());
 removeSync(tmpProjPath());
 
 execSync(
-  'yarn create nx-workspace proj --no-interactive --skip-install --preset=empty --cli=nx --no-nx-cloud --package-manager=yarn',
+  'npx create-nx-workspace@11 proj --no-interactive --skip-install --preset=empty --cli=nx --no-nx-cloud --package-manager=yarn',
   { cwd: './tmp/nx-playground' }
 );
 
